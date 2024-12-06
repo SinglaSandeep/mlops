@@ -1,15 +1,17 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: model
-command: >-
-  python 
-  --
-  --
+code: src
+command: >
+  python train.py
+  --training_data ${{inputs.training_data}}
+  --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
-    type: uri_folder 
-    path: 
-  reg_rate: 0.01
+    type: uri_folder
+    path: azureml:<REGISTERED_DATA_ASSET_NAME>@latest
+  reg_rate:
+    type: number
+    default: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+compute: <COMPUTE_CLUSTER_NAME>
+experiment_name: <EXPERIMENT_NAME>
+description: Train a Logistic Regression model using training data and log metrics with MLflow.
