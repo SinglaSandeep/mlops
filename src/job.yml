@@ -7,7 +7,8 @@ inputs:
   training_data: 
     path: azureml:diabetes-data:1
     mode: ro_mount
-environment: azureml:basic-env-scikit@latest
+environment:
+  image: azureml:basic-env-scikit@latest
 compute: azureml:ssingla1
 experiment_name: diabetes-data-example
 description: Train a classification model on diabetes data using a registered dataset as input.
