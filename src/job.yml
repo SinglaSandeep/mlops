@@ -8,7 +8,7 @@ inputs:
     path: azureml:diabetes-data:1
     mode: ro_mount
 environment:
-  image: azureml:sklearn-1.5:latest
+  image: AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:latest
 compute: azureml:automate-compute
 experiment_name: diabetes-data-example
 description: Train a classification model on diabetes data using a registered dataset as input.
