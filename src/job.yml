@@ -1,12 +1,12 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: model
+code: src
 command: |
   echo "--training_data: ${{inputs.training_data}}"
   python train.py --training_data ${{inputs.training_data}}
 inputs:
   training_data: 
-    path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
     type: uri_file
+    path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
 environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
 compute: azureml:automate-compute
 experiment_name: diabetes-data-example
