@@ -8,6 +8,7 @@ inputs:
   training_data: 
     type: uri_file
     path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
+    mode: download
 environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
 compute: azureml:automate-compute
 experiment_name: diabetes-data-example
