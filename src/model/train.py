@@ -56,6 +56,12 @@ def split_data(df):
     Returns:
         X_train, X_test, y_train, y_test: Split features and target sets.
     """
+    #if "target" not in df.columns:
+     #   raise RuntimeError("Dataframe does not contain a 'target' column.")
+
+    X = df.drop("Diabetic", axis=1)
+    y = df["Diabetic"]
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     return X_train, X_test, y_train, y_test
