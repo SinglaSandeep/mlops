@@ -5,7 +5,7 @@ command: >
   --training_data ${{inputs.training_data}}
 inputs:
   training_data: 
-    path: azureml://subscriptions/3a6f3563-a8d6-4d47-869c-14d37eddf93d/resourcegroups/demo-aml-rg/workspaces/demo-aml-workspace/datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
+    path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
     type: uri_file
 environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
 compute: azureml:automate-compute
