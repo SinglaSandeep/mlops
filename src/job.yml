@@ -6,7 +6,8 @@ command: >
 inputs:
   training_data: 
     path: azureml:diabetes-data:1
-    mode: ro_mount
+    type: mltable
+    mode: direct
 environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
 compute: azureml:automate-compute
 experiment_name: diabetes-data-example
