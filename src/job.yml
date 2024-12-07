@@ -1,8 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
 command: >
-  python train.py
-  --training_data ${{inputs.training_data}}
+  python train.py --training_data ${{inputs.training_data}}
 inputs:
   training_data: 
     path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC/diabetes-dev.csv
