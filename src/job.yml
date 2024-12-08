@@ -9,7 +9,8 @@ inputs:
     type: uri_file
     path: azureml://datastores/workspaceblobstore/paths/UI/2024-12-06_155943_UTC
     mode: download
-environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
+#environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
+environment: azureml://locations/japaneast/workspaces/06e0f627-548e-42d4-bfc4-f30109c95ba5/environments/custom-image-mlflow/latest
 compute: azureml:automate-compute
 experiment_name: diabetes-data-example
 description: Train a classification model on diabetes data using a registered dataset as input.
