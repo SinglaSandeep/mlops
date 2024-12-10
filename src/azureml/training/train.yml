@@ -3,7 +3,7 @@ command: |
   echo "--training_data: ${{inputs.training_data}}"
   ls -l ${{inputs.training_data}}
   python train.py --training_data ${{inputs.training_data}}
-code: model  
+code: ../../data-science  
 inputs:
   training_data: 
     type: uri_file

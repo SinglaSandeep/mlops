@@ -2,6 +2,15 @@ name: Manually trigger an Azure Machine Learning job
 
 on:
   workflow_dispatch:
+    inputs:
+      resource_group:
+        description: 'Resource group'
+        required: true
+        default: 'demo-aml-rg'
+      workspace_name:
+        description: 'Workspace name'
+        required: true
+        default: 'demo-aml-workspace'  
 
 jobs:
   train:
@@ -18,6 +27,6 @@ jobs:
     - name: Trigger Azure Machine Learning job
       run: |
         ls -lrt
-        az ml job create --file src/job.yml --web --resource-group demo-aml-rg --workspace-name demo-aml-workspace
+        az ml job create --file src/azureml/training/train.yml --web --resource-group ${{ github.event.inputs.resource_group }} --workspace-name ${{ github.event.inputs.workspace_name }}
 
 
